@@ -10,6 +10,11 @@
 Если у вас не завелось - пишите тикет, возможно, я смогу с этим что-нибудь сделать (или нет).
 
 ---
+```
+wget -O far2l_64.deb https://github.com/evgenyk/far2l-deb/blob/master/far2l_64.deb?raw=true
+sudo dpkg -i far2l_64.deb 
+```
+---
 
 .deb packages for [far2l](https://github.com/elfmz/far2l) ([Far Manager 2](http://www.farmanager.com/index.php?l=en) linux port, including [far-gvfs](https://github.com/cycleg/far-gvfs) plugin as FTP/SFTP/WebDAV/SMB client).
 
