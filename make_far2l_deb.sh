@@ -1,5 +1,5 @@
 #!/bin/bash
-sudo apt-get install git gawk m4 libglib2.0-dev libwxgtk3.0-dev cmake g++ libgtkmm-3.0-dev uuid-dev libssl-dev gvfs-libs gvfs-backends gvfs-fuse
+sudo apt-get install git gawk m4 libglib2.0-dev libwxgtk3.0-dev cmake g++ libgtkmm-3.0-dev uuid-dev libssl-dev sshfs gvfs-libs gvfs-backends gvfs-fuse
 rm -rf far2l.deb far2l_`getconf LONG_BIT`.deb
 rm -rf far2l
 mkdir far2l
@@ -7,8 +7,10 @@ cd far2l
 git clone https://github.com/elfmz/far2l
 cd far2l
 git clone https://github.com/cycleg/far-gvfs.git
+git clone https://github.com/unxed/far2l-fuse.git
 cd ..
 echo "add_subdirectory (far-gvfs)" >> far2l/CMakeLists.txt
+echo "add_subdirectory (far2l-fuse)" >> far2l/CMakeLists.txt
 mkdir build
 cd build
 cmake -DCMAKE_BUILD_TYPE=Release ../far2l
@@ -27,7 +29,7 @@ else
 fi
 echo "Maintainer: root <root@localhost>" >> deb/far2l/DEBIAN/control
 echo "Priority: extra" >> deb/far2l/DEBIAN/control
-echo "Depends: libglib2.0-dev, libwxgtk3.0-dev, libgtkmm-3.0-dev, uuid-dev, libssl-dev, gvfs-libs, gvfs-backends, gvfs-fuse" >> deb/far2l/DEBIAN/control
+echo "Depends: libglib2.0-dev, libwxgtk3.0-dev, libgtkmm-3.0-dev, uuid-dev, libssl-dev, sshfs, gvfs-libs, gvfs-backends, gvfs-fuse" >> deb/far2l/DEBIAN/control
 echo "Description: Linux port of FAR v2" >> deb/far2l/DEBIAN/control
 echo " https://github.com/elfmz/far2l" >> deb/far2l/DEBIAN/control
 echo " ." >> deb/far2l/DEBIAN/control
