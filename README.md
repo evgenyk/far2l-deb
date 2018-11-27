@@ -13,6 +13,7 @@
 ```
 wget -O far2l_64.deb https://github.com/evgenyk/far2l-deb/blob/master/far2l_64_tty_18_04.deb?raw=true ; sudo dpkg -i ./far2l_64.deb ; sudo apt-get install -f
 ```
+PPAs: https://launchpad.net/~far2l-team/+archive/ubuntu/ppa
 ---
 
 .deb packages for [far2l](https://github.com/elfmz/far2l) ([Far Manager 2](http://www.farmanager.com/index.php?l=en) linux port, including [far-gvfs](https://github.com/cycleg/far-gvfs) plugin as FTP/SFTP/WebDAV/SMB client).
